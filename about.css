@@ -1,0 +1,238 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #111827;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  text-decoration: none;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  letter-spacing: -2px;
+
+  color: #111827;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 42px;
+
+  list-style: none;
+}
+
+.nav-menu a {
+  position: relative;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: #4b5563;
+
+  transition: color 0.3s ease;
+}
+
+/* Hover */
+
+.nav-menu a:hover {
+  color: #111827;
+}
+
+/* Garis bawah */
+
+.nav-menu a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -9px;
+
+  width: 0;
+  height: 2px;
+
+  background: #111827;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+/* Hover garis */
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Active */
+
+.nav-menu a.active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   GET STARTED BUTTON
+========================= */
+
+.get-started {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 21px;
+
+  background: #111827;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+/* Arrow */
+
+.get-started span {
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+/* Hover Button */
+
+.get-started:hover {
+  background: #374151;
+
+  transform: translateY(-2px);
+}
+
+.get-started:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .get-started {
+    padding: 11px 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    height: auto;
+
+    padding: 20px;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+  }
+
+  .nav-menu {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+  }
+
+  .get-started {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .logo {
+    font-size: 28px;
+  }
+
+  .get-started {
+    font-size: 13px;
+
+    padding: 10px 14px;
+  }
+
+  .nav-menu {
+    gap: 18px;
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+}
